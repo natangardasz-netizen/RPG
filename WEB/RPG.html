@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mesa Digital RPG</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <header class="topbar">
+            <h1>🎲 Mesa Digital RPG</h1>
+
+            <div class="controles">
+                <label for="arquivoMapa" class="botao">
+                    📁 Escolher mapa
+                </label>
+
+                <input
+                    type="file"
+                    id="arquivoMapa"
+                    accept="image/*"
+                    hidden
+                >
+
+                <button id="zoomMais">+</button>
+                <button id="zoomMenos">−</button>
+
+                <button id="centralizar">
+                    ⌂ Centralizar
+                </button>
+
+                <button id="telaCheia">
+                    ⛶ Tela cheia
+                </button>
+            </div>
+        </header>
+
+        <main id="areaMapa">
+
+            <div id="mensagem">
+                <h2>Bem-vindo à Mesa Digital</h2>
+                <p>
+                    Escolha uma imagem para começar sua aventura.
+                </p>
+
+                <label for="arquivoMapa" class="botao grande">
+                    📁 Carregar mapa
+                </label>
+            </div>
+
+            <img
+                id="mapa"
+                alt="Mapa de RPG"
+            >
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

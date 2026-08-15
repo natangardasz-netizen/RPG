@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    height: 70px;
+    background: #1b1b1b;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    border-bottom: 1px solid #333;
+
+    z-index: 10;
+}
+
+.topbar h1 {
+    font-size: 20px;
+}
+
+.controles {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+button,
+.botao {
+    border: none;
+    background: #292929;
+    color: white;
+
+    padding: 10px 14px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+button:hover,
+.botao:hover {
+    background: #444;
+}
+
+button {
+    min-width: 40px;
+}
+
+.grande {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 20px;
+}
+
+#areaMapa {
+    position: relative;
+
+    flex: 1;
+
+    overflow: hidden;
+
+    background-color: #0d0d0d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mapa {
+    position: absolute;
+
+    max-width: none;
+
+    user-select: none;
+
+    cursor: grab;
+
+    transform-origin: center center;
+
+    display: none;
+}
+
+#mapa.arrastando {
+    cursor: grabbing;
+}
+
+#mensagem {
+    text-align: center;
+    color: #aaa;
+}
+
+#mensagem h2 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+#mensagem p {
+    font-size: 15px;
+}

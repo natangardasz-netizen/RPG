@@ -1,0 +1,12 @@
+class GerenciadorMapas:
+    def __init__(self):
+        self.mapas = []
+
+    def adicionar_mapa(self, mapa):
+        self.mapas.append(mapa)
+
+    def remover_mapa(self, mapa):
+        self.mapas.remove(mapa)
+
+    def listar_mapas(self):
+        return self.mapas
