@@ -1,69 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mesa Digital RPG</title>
+    <link rel="stylesheet" href="RPG.css" />
+  </head>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
+  <body>
     <div id="app">
+      <header class="topbar">
+        <div class="controles">
+          <button id="mostrarMapas">☰ Mapas</button>
+          <button id="mostrarGrid">⊞ Grade</button>
+          <button id="zoomMais">+</button>
+          <button id="zoomMenos">−</button>
+          <button id="centralizar">⌂ Centralizar</button>
+          <button id="telaCheia">⛶ Tela cheia</button>
+          <button id="musicas">🎵 Músicas</button>
+          <button id="medir">📏 Medir</button>
+          <button id="desenhar">✏️ Desenhar</button>
+          <button id="espelhoH">🔄 Girar 90°</button>
+          <button id="espelhoV">🙃 Girar 180°</button>
+          <button id="limparDesenho">🧹 Limpar</button>
+        </div>
+      </header>
 
-        <header class="topbar">
-            <h1>🎲 Mesa Digital RPG</h1>
+      <div class="conteudo">
+        <aside class="painelMapas">
+          <div class="cabecalhoMapas">
+            <h2>🗺️ Meus mapas</h2>
+            <label for="arquivoMapa" class="botaoAdicionar">
+              + Adicionar
+            </label>
+            <input type="file" id="arquivoMapa" accept="image/*" hidden />
+          </div>
 
-            <div class="controles">
-                <label for="arquivoMapa" class="botao">
-                    📁 Escolher mapa
-                </label>
+          <div id="listaMapas">
+            <p class="semMapas">Nenhum mapa adicionado.</p>
+          </div>
+        </aside>
 
-                <input
-                    type="file"
-                    id="arquivoMapa"
-                    accept="image/*"
-                    hidden
-                >
+        <aside class="painelMusicas">
+          <div class="cabecalhoMusicas">
+            <h2>🎵 Músicas</h2>
+            <label for="arquivoMusica" class="botaoAdicionar">
+              + Adicionar
+            </label>
+            <input
+              type="file"
+              id="arquivoMusica"
+              accept="audio/*"
+              multiple
+              hidden
+            />
+          </div>
 
-                <button id="zoomMais">+</button>
-                <button id="zoomMenos">−</button>
+          <div id="listaMusicas">
+            <p class="semMusicas">Nenhuma música adicionada.</p>
+          </div>
 
-                <button id="centralizar">
-                    ⌂ Centralizar
-                </button>
-
-                <button id="telaCheia">
-                    ⛶ Tela cheia
-                </button>
+          <div class="playerMusica">
+            <div id="musicaAtual" class="musicaAtual">
+              Nenhuma música selecionada
             </div>
-        </header>
+            <audio id="playerAudio" controls></audio>
+          </div>
+        </aside>
 
         <main id="areaMapa">
+          <div id="mensagem">
+            <h2>🎲 Mesa Digital RPG</h2>
+            <p>Adicione um mapa para começar.</p>
+            <label for="arquivoMapa" class="botaoGrande">
+              📁 Adicionar primeiro mapa
+            </label>
+          </div>
 
-            <div id="mensagem">
-                <h2>Bem-vindo à Mesa Digital</h2>
-                <p>
-                    Escolha uma imagem para começar sua aventura.
-                </p>
-
-                <label for="arquivoMapa" class="botao grande">
-                    📁 Carregar mapa
-                </label>
-            </div>
-
-            <img
-                id="mapa"
-                alt="Mapa de RPG"
-            >
-
+          <img id="mapa" alt="Mapa de RPG" />
+          <div id="grid"></div>
+          <div id="regua"></div>
+          <canvas id="canvasDesenho"></canvas>
         </main>
-
+      </div>
     </div>
 
-    <script src="script.js"></script>
-
-</body>
+    <script src="RPG.js"></script>
+  </body>
 </html>
